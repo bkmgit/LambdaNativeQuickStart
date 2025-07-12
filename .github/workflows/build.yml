@@ -53,12 +53,12 @@ jobs:
        cp PROFILE.template PROFILE
        sed -i 's|SYS_ANDROIDPW="yoursecrethere"|SYS_ANDROIDPW="android"|g' PROFILE
     - name: linux builds
-      working-directory: lambdanative/apps
+      working-directory: lambdanative
       run: |
        ./configure Calculator
        make
     - name: android builds
-      working-directory: lambdanative/apps
+      working-directory: lambdanative
       run: |
        # Fedora only provides Python3
        sed -i 's/python/python3/g' targets/android/check-tools
